@@ -168,10 +168,34 @@ section.band.mist{background:var(--mist)}
 .flag{background:var(--warn-bg);color:var(--warn-ink);border-radius:12px;padding:14px 16px;font-size:.9rem;margin:0 auto 22px;max-width:46em;text-align:left;line-height:1.5}
 footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;padding-top:28px;padding-bottom:calc(28px + env(safe-area-inset-bottom,0px))}
 
+/* id paths */
+.paths{display:grid;gap:16px;text-align:left}
+.path-card{background:var(--card);border:1px solid var(--rule);border-radius:18px;padding:22px;box-shadow:var(--shadow);border-top:6px solid var(--turquoise)}
+.path-card.alt{border-top-color:var(--ocean)}
+:root[data-theme="dark"] .path-card.alt{border-top-color:var(--aqua)}
+.path-card h3{font-size:1.4rem}
+.path-card ul{margin:14px 0 0;padding-left:1.2em}
+.path-card li{margin:9px 0;line-height:1.5;font-size:.95rem}
+.star{display:inline-grid;place-items:center;width:1.5em;height:1.5em;border-radius:50%;background:#F2C230;color:#4a3a00;font-size:.8em;vertical-align:middle;margin-right:8px}
+.hero-alert{display:inline-block;margin:18px auto 0;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:12px;padding:10px 14px;font-size:.92rem;max-width:38em}
+.hero-alert a{color:#fff;font-weight:600}
+/* info cards */
+.info{display:grid;gap:14px;text-align:left}
+.info article{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow)}
+.info h3{font-size:1.2rem}
+.info .verdict{display:inline-block;font-size:.75rem;font-weight:600;border-radius:999px;padding:3px 10px;margin-top:8px;background:var(--seafoam);color:var(--deep)}
+:root[data-theme="dark"] .info .verdict{color:var(--ink)}
+.info .verdict.no{background:var(--warn-bg);color:var(--warn-ink)}
+.info p{font-size:.92rem;color:var(--ink-soft);margin-top:10px;line-height:1.55}
+.info p strong{color:var(--ink)}
+.tel{white-space:nowrap}
+
 /* ---------- tablet ---------- */
 @media (min-width:720px){
   .days{grid-template-columns:repeat(3,minmax(0,1fr))}
   .bags{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .paths{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .info{grid-template-columns:repeat(2,minmax(0,1fr))}
   .bar-in{justify-content:space-between}
 }
 /* ---------- desktop ---------- */
@@ -192,6 +216,7 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
   .sec-head{margin-left:0}
   .day,.days{text-align:left}
   .bags{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .hero-alert{margin-left:0}
   .sec-head p{margin-left:0}
   /* real table */
   .cmp{border-spacing:0;background:var(--card);border:1px solid var(--rule);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
@@ -205,6 +230,9 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
   .cmp td .sub{margin-top:2px}
   .cmp td.air{font-size:1.05rem;padding-bottom:14px}
   .cmp tr.top td{background:var(--seafoam)}
+}
+@media (min-width:1280px){
+  .info{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -235,6 +263,7 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
       <p class="dateline">Fare search run Tuesday evening, September 22, 2026. Bradley (BDL) to Tampa or Orlando, one way, one checked bag.</p>
       <h1>Gloria can be in Tampa Thursday night for about $235, bag included.</h1>
       <p class="lede">We checked Kiwi.com, Expedia and lastminute.com for every one-way flight on September 23, 24 and 25, then added the cost of one checked bag to each fare. This Breeze Airways flight came out lowest by about $30.</p>
+      <p class="hero-alert">She has no passport, so her license is what gets her through security. Before booking, <a href="#id-check">check it for a gold star</a>.</p>
     </div>
 
     <article class="pass" aria-label="Recommended flight">
@@ -260,6 +289,39 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
         <p class="pass-note">Flights MX 1633 then MX 1449, sold together as one booking. The fare can't be refunded or changed. Breeze sets its bag price by route, so the exact amount appears at checkout. Add the bag while booking; at the airport it costs $75.</p>
       </div>
     </article>
+  </div>
+</section>
+
+<section class="band mist" id="id-check">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>First, look at the top right corner of her license</h2>
+      <p>With no passport, Gloria's Connecticut license decides whether she clears airport security. What matters is whether it has a gold star, which marks it as a REAL ID. The renewal due next week matters much less.</p>
+    </div>
+    <div class="paths">
+      <article class="path-card">
+        <h3><span class="star" aria-hidden="true">&#9733;</span>It has a gold star</h3>
+        <span class="tag">She can fly on it this week</span>
+        <ul>
+          <li>TSA accepts a REAL ID license for up to two years after it expires, so next week's expiration date doesn't affect this trip.</li>
+          <li>Renew online before the expiration date to avoid Connecticut's $25 late fee. It takes about seven minutes on the CT DMV site and works from anywhere, including Florida.</li>
+          <li>Pick the two-year renewal offered to drivers 65 and older. It costs $24, compared with $72 or $96 for a longer license.</li>
+          <li>The new card is mailed within 30 days to the address DMV has on file. She keeps her current card, which is the one she'll fly with, so ask someone at home to watch the mail.</li>
+          <li>Online renewal isn't available if her last renewal didn't include a new photo. In that case, renew by mail from Florida with Form B-350, sent at least 10 days before expiration, or in person once she's back.</li>
+        </ul>
+      </article>
+      <article class="path-card alt">
+        <h3>No star, or it says "Not for Federal Identification"</h3>
+        <span class="tag">Plan on TSA ConfirmID</span>
+        <ul>
+          <li>TSA stopped accepting licenses without the star on May 7, 2025.</li>
+          <li>Fastest fix this week: pay the $45 TSA ConfirmID fee on Pay.gov before leaving for the airport. Enter her legal name and September 24 as the travel date. It covers 10 days. Print or screenshot the receipt; TSA needs to see it.</li>
+          <li>TSA then tries to confirm her identity at the checkpoint. Success isn't guaranteed and it can add about 30 minutes, so get to Bradley at least 2&frac12; hours early with her license and any other ID that shows her name.</li>
+          <li>A REAL ID needs an in-person DMV appointment with her U.S. birth certificate, Social Security card, and two pieces of mail dated within 90 days. The card arrives in about 20 business days, which is too late for Thursday but worth doing before she flies home.</li>
+          <li>If she flies home more than 10 days after September 24 without a REAL ID, the $45 fee applies again. TSA doesn't accept paper temporary licenses.</li>
+        </ul>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -319,7 +381,40 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
   </div>
 </section>
 
-<section class="band white">
+<section class="band white" id="bereavement">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Bereavement and senior fares: what actually exists</h2>
+      <p>No airline combines a senior discount with a bereavement discount. Only a few airlines still have bereavement programs, and today they mostly offer a more flexible ticket, not a lower price.</p>
+    </div>
+    <div class="info">
+      <article>
+        <h3>Delta</h3>
+        <span class="verdict">Worth one phone call</span>
+        <p>Delta covers travel for a family member's <strong>imminent</strong> death, such as a sister in hospice, through its Medical Emergency Fare program. She needs a free SkyMiles account, and the booking is done by phone at <strong class="tel">800-221-1212</strong>. Have the hospice's name and phone number and the attending doctor's name ready. Travel has to start within seven days.</p>
+        <p>Compare the quote against the $378.78 Delta fare found online. Delta says its regular fares can be lower.</p>
+      </article>
+      <article>
+        <h3>Alaska Airlines</h3>
+        <span class="verdict no">Doesn't fit this route</span>
+        <p>Takes 10% off the lowest fare for travel within seven days of a death. No Alaska flights appeared between Bradley and Florida in these searches.</p>
+      </article>
+      <article>
+        <h3>American, Southwest, United, Breeze, Frontier</h3>
+        <span class="verdict no">No bereavement fare</span>
+        <p>American and Southwest both state they don't offer one, and United has no dedicated program. Breeze and Frontier don't publish one. Their regular low fares, like the Breeze flight above, are already the cheapest route.</p>
+      </article>
+      <article>
+        <h3>Senior fares, 65 and older</h3>
+        <span class="verdict">Rare, but free to check</span>
+        <p>American, United and Delta still offer senior fares on a few routes. On aa.com or united.com, change the traveler type to "Senior (65+)" and compare. Southwest ended senior fares in 2019, and Frontier's 55-and-over offer ended in February 2025. None of these is likely to beat about $235.</p>
+      </article>
+    </div>
+    <p class="flag" style="margin-top:22px">Only call phone numbers printed on the airline's own website. Search results are full of look-alike "bereavement" numbers run by third-party booking agents.</p>
+  </div>
+</section>
+
+<section class="band mist">
   <div class="wrap">
     <div class="sec-head">
       <h2>Every option we found, with the bag added</h2>
@@ -346,7 +441,7 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
   </div>
 </section>
 
-<section class="band mist">
+<section class="band white">
   <div class="wrap">
     <div class="sec-head">
       <h2>Her checked bag, airline by airline</h2>
@@ -368,19 +463,52 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
   </div>
 </section>
 
-<section class="band white">
+<section class="band mist" id="airport">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Booking the Thursday Breeze flight</h2>
-      <p>About ten minutes, in this order.</p>
+      <h2>Making the travel day easier at 77</h2>
+      <p>These are free and available to her whether or not she qualifies for any special fare.</p>
+    </div>
+    <div class="info">
+      <article>
+        <h3>Wheelchair or escort</h3>
+        <span class="verdict">No charge</span>
+        <p>Airlines provide wheelchair and escort help free. Ask for it while booking, or call Breeze afterward. It covers the walk through Bradley, the plane change in Wilmington, and getting from the gate to baggage claim in Tampa.</p>
+      </article>
+      <article>
+        <h3>Shoes stay on</h3>
+        <span class="verdict">Age 75 and older</span>
+        <p>TSA lets travelers 75 and older keep their shoes on at security. She may need to take off a light jacket for the body scanner, and she can ask to sit down during parts of screening.</p>
+      </article>
+      <article>
+        <h3>TSA Cares</h3>
+        <span class="verdict">855-787-2227</span>
+        <p>A free helpline that can arrange a trained officer to walk her through screening. TSA asks for 72 hours' notice, so call first thing Wednesday morning. A Thursday flight may be too soon to guarantee it, but they'll say what's possible.</p>
+      </article>
+      <article>
+        <h3>Keep essentials on her</h3>
+        <span class="verdict">Personal item</span>
+        <p>Medications, her license and any ConfirmID receipt, phone and charger, and a written list of phone numbers for the hospice and the family in Tampa all go in the bag she carries, not the checked one.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band white" id="checklist">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What to do tonight and tomorrow</h2>
+      <p>In this order. Steps two and three depend on what her license shows; she needs only one of them.</p>
     </div>
     <ol class="steps">
-      <li><div><strong>Search Bradley (BDL) to Tampa (TPA), one way, Thursday September 24.</strong><span>On flybreeze.com, pick the 2:18 PM departure connecting in Wilmington.</span></div></li>
-      <li><div><strong>Enter her name exactly as it appears on her ID.</strong><span>Gloria J. Myers, including the middle initial if her license shows it.</span></div></li>
-      <li><div><strong>Add one checked bag before paying.</strong><span>Compare the total against the "Nicer" bundle, which already includes a bag.</span></div></li>
-      <li><div><strong>Pay and save the confirmation code.</strong><span>Breeze is cashless at the airport, so bring a card for anything extra.</span></div></li>
-      <li><div><strong>Check in on the Breeze app the day before.</strong><span>Get to Bradley about two hours before the 2:18 PM departure to drop the bag.</span></div></li>
-      <li><div><strong>Tell the family in Tampa when to meet her.</strong><span>Tampa International, 9:56 PM Thursday.</span></div></li>
+      <li><div><strong>Tonight: check her license for the gold star.</strong><span>Top right corner. No star, or the words "Not for Federal Identification," means ConfirmID.</span></div></li>
+      <li><div><strong>Gold star: renew online now.</strong><span>CT DMV site, about seven minutes. Pick the two-year, $24 option for drivers 65 and older.</span></div></li>
+      <li><div><strong>No star: pay the $45 ConfirmID fee on Pay.gov.</strong><span>Her legal name, travel date September 24. Print or screenshot the receipt.</span></div></li>
+      <li><div><strong>Book the 2:18 PM Breeze flight on flybreeze.com.</strong><span>Enter her name exactly as it appears on the license, and add the checked bag before paying.</span></div></li>
+      <li><div><strong>Ask Breeze for wheelchair or escort help.</strong><span>Free. Especially useful for the plane change in Wilmington.</span></div></li>
+      <li><div><strong>Wednesday morning: call TSA Cares.</strong><span>855-787-2227. Ask for help through security at Bradley on Thursday.</span></div></li>
+      <li><div><strong>Wednesday after 2:18 PM: check in on the Breeze app.</strong><span>Check-in opens 24 hours before the flight.</span></div></li>
+      <li><div><strong>Thursday: at Bradley by about noon.</strong><span>License, receipt if needed, medications. The family in Tampa meets her at 9:56 PM.</span></div></li>
     </ol>
   </div>
 </section>
@@ -398,14 +526,15 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
         <li><strong>Kiwi.com's lower-cost routings may be separate tickets.</strong> Kiwi can join flights that aren't sold together, which means re-checking the bag at the connection and no protection if the first flight is late. The flights recommended here were sold as one itinerary on Expedia.</li>
         <li><strong>Not every airline showed up everywhere.</strong> lastminute.com returned only Southwest. No Avelo flights appeared from Bradley on these dates, and flights from Tweed-New Haven weren't searched.</li>
         <li><strong>Orlando versus Tampa.</strong> The two airports are roughly 85 miles apart, about a 90-minute drive. Landing in Tampa saves the family that trip.</li>
-        <li><strong>Bereavement fares.</strong> Most U.S. airlines no longer offer them, but a quick call to the airline mentioning a family member in hospice costs nothing.</li>
+        <li><strong>ID and license rules.</strong> From TSA (accepted IDs, ConfirmID, screening for travelers 75 and older) and the Connecticut DMV renewal and REAL ID pages, checked September 22, 2026. TSA says its list can change without notice, so confirm on tsa.gov the day before she flies.</li>
+        <li><strong>Fare programs.</strong> Delta's bereavement and medical-emergency rules come from delta.com and Delta's agency policy pages. The other airline and senior-fare details come from 2026 travel guides summarizing each airline's published policy. Confirm by phone before relying on any of them.</li>
       </ul>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">Prepared for the family of Gloria J. Myers, September 22, 2026. Fares from Kiwi.com, Expedia and lastminute.com searches; bag fees from airline listings and flybreeze.com.</div></footer>
+<footer><div class="wrap">Prepared for the family of Gloria J. Myers, September 22, 2026. Fares from Kiwi.com, Expedia and lastminute.com; bag fees from airline listings and flybreeze.com; ID rules from TSA and the Connecticut DMV.</div></footer>
 
 <script>
 (function(){
