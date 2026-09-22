@@ -190,6 +190,43 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
 .info p strong{color:var(--ink)}
 .tel{white-space:nowrap}
 
+/* delta call script */
+.script-grid{display:grid;gap:18px;text-align:left}
+.sheet{background:var(--card);border:1px solid var(--rule);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+.sheet h3{font-size:1.3rem;margin-bottom:10px}
+.sheet h4{font-family:var(--sans);font-size:.95rem;font-weight:700;margin:22px 0 8px;color:var(--ocean)}
+:root[data-theme="dark"] .sheet h4{color:var(--aqua)}
+.sheet ul{margin:0;padding-left:1.2em}
+.sheet li{margin:8px 0;line-height:1.5;font-size:.94rem}
+.say{background:var(--mist);border-left:4px solid var(--turquoise);border-radius:10px;padding:14px 16px;font-family:var(--serif);font-size:1.08rem;line-height:1.5;margin:8px 0 0}
+.qs{margin:0;padding-left:1.6em}
+.qs li{margin:12px 0;font-size:.95rem;line-height:1.5}
+.qs li strong{display:block;font-weight:600}
+.qs li span{display:block;color:var(--ink-soft);font-size:.86rem;margin-top:3px}
+.fill{display:grid;gap:12px;margin-top:6px}
+.fill div{border-bottom:1px solid var(--rule);padding:10px 0 6px;font-size:.85rem;color:var(--ink-soft);min-height:2.4em}
+.decide li strong{color:var(--ink)}
+.print-btn{margin-top:18px}
+.script-link{display:inline-block;margin-top:10px;font-size:.88rem;font-weight:600;color:var(--ocean)}
+:root[data-theme="dark"] .script-link{color:var(--aqua)}
+@media print{
+  .bar,.print-btn,footer{display:none!important}
+  body,section.band,.sheet{background:#fff!important;color:#000!important;box-shadow:none!important}
+  body.print-script main>section:not(#delta-script){display:none!important}
+  #delta-script{padding:0!important}
+  .script-grid{grid-template-columns:1fr 1fr!important;gap:14px}
+  html{font-size:12px!important}
+  body.print-script section.band{text-align:left!important}
+  body.print-script .sec-head{margin:0 0 10px!important}
+  body.print-script .sec-head p{margin-left:0!important}
+  .sheet{border:1px solid #bbb;padding:14px!important}
+  .sheet h4{margin-top:14px!important}
+  .qs li{margin:7px 0!important}
+  .say{padding:10px 12px!important;font-size:1rem!important}
+  .script-grid>div>.sheet{break-inside:avoid}
+  .say{background:#f1f7f7!important}
+}
+
 /* ---------- tablet ---------- */
 @media (min-width:720px){
   .days{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -232,6 +269,7 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
   .cmp tr.top td{background:var(--seafoam)}
 }
 @media (min-width:1280px){
+  .script-grid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);align-items:start}
   .info{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -393,6 +431,7 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
         <span class="verdict">Worth one phone call</span>
         <p>Delta covers travel for a family member's <strong>imminent</strong> death, such as a sister in hospice, through its Medical Emergency Fare program. She needs a free SkyMiles account, and the booking is done by phone at <strong class="tel">800-221-1212</strong>. Have the hospice's name and phone number and the attending doctor's name ready. Travel has to start within seven days.</p>
         <p>Compare the quote against the $378.78 Delta fare found online. Delta says its regular fares can be lower.</p>
+        <a class="script-link" href="#delta-script">Read the call script</a>
       </article>
       <article>
         <h3>Alaska Airlines</h3>
@@ -414,7 +453,97 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
   </div>
 </section>
 
-<section class="band mist">
+<section class="band mist" id="delta-script">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Calling Delta: what to say and ask</h2>
+      <p>For a first call to ask questions before Gloria books. It takes about 15 minutes. Delta's program is for her, as the traveler, going to her sister's side, so her details are the ones that count.</p>
+      <button type="button" class="print-btn" id="printScript">Print this script</button>
+    </div>
+    <div class="script-grid">
+      <div class="sheet">
+        <h3>On the call</h3>
+        <p>Call <strong class="tel">800-221-1212</strong>, the number on delta.com.</p>
+
+        <h4>When the agent answers</h4>
+        <p class="say">"Hi, I'm calling for my mother, Gloria Myers. Her sister is in hospice care in Florida, and we need to get my mom there this week. I understand Delta has a program for travel when a family member is near death. I'd like to ask a few questions before we book."</p>
+
+        <h4>If the agent isn't sure what you mean</h4>
+        <p class="say">"Delta's policy mentions a Medical Emergency Fare for domestic travel related to the imminent death of an immediate family member. Can you check that for me?"</p>
+
+        <h4>Does she qualify?</h4>
+        <ol class="qs">
+          <li><strong>"Does my mom qualify when it's her sister in hospice, not a death that's already happened?"</strong><span>Confirms the right program before you spend time on prices.</span></li>
+          <li><strong>"Can I set this up for her, or does she need to be on the call?"</strong><span>Tells you whether you can finish the booking yourself.</span></li>
+          <li><strong>"What proof do you need, and when?"</strong><span>Delta verifies documents. Find out if it's the hospice's phone number, a letter, or something else.</span></li>
+        </ol>
+
+        <h4>What does it cost?</h4>
+        <ol class="qs" start="4">
+          <li><strong>"What's the total one-way price, Hartford to Tampa, for Wednesday, Thursday and Friday, with taxes?"</strong><span>Prices can differ a lot from day to day.</span></li>
+          <li><strong>"Is a checked bag included, or what does it cost?"</strong><span>She's checking one bag, so compare totals with the bag included.</span></li>
+          <li><strong>"Is that lower than the regular fare on delta.com?"</strong><span>Delta says its regular fares are sometimes cheaper. Ask the agent to compare both.</span></li>
+          <li><strong>"Is Orlando any cheaper than Tampa?"</strong><span>The family can pick her up in either city.</span></li>
+        </ol>
+
+        <h4>How flexible is it?</h4>
+        <ol class="qs" start="8">
+          <li><strong>"Can this ticket be changed or refunded, and are there fees?"</strong><span>Only Delta's unrestricted tickets under this program can be refunded. Ask which kind you're being quoted.</span></li>
+          <li><strong>"We don't know when she'll come home. Can she book the return later at the same kind of fare?"</strong><span>With hospice, a flexible return can matter more than the outbound price.</span></li>
+          <li><strong>"If her sister passes before or during the trip, does anything change with the ticket?"</strong><span>Delta's rules differ for an expected death and one that has happened.</span></li>
+          <li><strong>"If we buy today, is there any window to cancel for a full refund?"</strong><span>These tickets must be paid for as soon as they're booked.</span></li>
+        </ol>
+
+        <h4>Help for a 77-year-old traveler</h4>
+        <ol class="qs" start="12">
+          <li><strong>"Can you add wheelchair or escort help at Hartford, the Atlanta connection, and Tampa?"</strong><span>It's free, and one call covers the whole trip.</span></li>
+          <li><strong>"How long is the connection in Atlanta, and is there a longer option?"</strong><span>The flight found online had 51 minutes, which is tight with a wheelchair.</span></li>
+        </ol>
+
+        <h4>To end the call without booking</h4>
+        <p class="say">"Thank you. Can I get your name and a reference for this quote? I'd like to talk with my mom and compare before we book."</p>
+      </div>
+
+      <div>
+        <div class="sheet">
+          <h3>Before you dial</h3>
+          <ul>
+            <li>Gloria's full name exactly as on her license, her date of birth, phone and email</li>
+            <li>A SkyMiles number for her. It's free to join on delta.com, and the program requires it</li>
+            <li>Her sister's full name, plus the hospice's name, address and phone number</li>
+            <li>The name of the doctor or hospice nurse caring for her sister</li>
+            <li>The trip: Bradley (BDL) to Tampa (TPA) or Orlando (MCO), September 23, 24 or 25, return open</li>
+            <li>Prices to compare: Delta online $378.78 with a bag; Breeze about $235</li>
+          </ul>
+        </div>
+
+        <div class="sheet" style="margin-top:18px">
+          <h3>Deciding afterward</h3>
+          <ul class="decide">
+            <li><strong>Delta costs $379 or more with the bag and has no real flexibility:</strong> book the Breeze flight at about $235.</li>
+            <li><strong>Delta costs a bit more but lets her change dates or get a refund:</strong> the extra money pays for flexibility, which is often worth it with hospice, especially for the flight home.</li>
+            <li><strong>Delta comes in under about $300 with the bag and is flexible:</strong> that's the better deal. Book it.</li>
+          </ul>
+          <p style="margin-top:12px;font-size:.88rem;color:var(--ink-soft)">Whichever airline she flies, check her license for the gold star before booking.</p>
+        </div>
+
+        <div class="sheet" style="margin-top:18px">
+          <h3>Notes from the call</h3>
+          <div class="fill">
+            <div>Agent's name and time of call</div>
+            <div>Price Wed / Thu / Fri, with bag</div>
+            <div>Refundable or changeable?</div>
+            <div>How the return trip works</div>
+            <div>Documents Delta needs</div>
+            <div>Reference number</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band white">
   <div class="wrap">
     <div class="sec-head">
       <h2>Every option we found, with the bag added</h2>
@@ -441,7 +570,7 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
   </div>
 </section>
 
-<section class="band white">
+<section class="band mist">
   <div class="wrap">
     <div class="sec-head">
       <h2>Her checked bag, airline by airline</h2>
@@ -463,7 +592,7 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
   </div>
 </section>
 
-<section class="band mist" id="airport">
+<section class="band white" id="airport">
   <div class="wrap">
     <div class="sec-head">
       <h2>Making the travel day easier at 77</h2>
@@ -494,7 +623,7 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
   </div>
 </section>
 
-<section class="band white" id="checklist">
+<section class="band mist" id="checklist">
   <div class="wrap">
     <div class="sec-head">
       <h2>What to do tonight and tomorrow</h2>
@@ -513,7 +642,7 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
   </div>
 </section>
 
-<section class="band mist">
+<section class="band white">
   <div class="wrap">
     <div class="sec-head">
       <h2>What these numbers can and can't tell you</h2>
@@ -541,6 +670,9 @@ footer{background:var(--deep);color:#CFEFEA;text-align:center;font-size:.85rem;p
   var root=document.documentElement;
   var sel=document.getElementById('fontSize');
   sel.addEventListener('change',function(){root.style.setProperty('--fs',sel.value);});
+  var pb=document.getElementById('printScript');
+  pb.addEventListener('click',function(){document.body.classList.add('print-script');window.print();});
+  window.addEventListener('afterprint',function(){document.body.classList.remove('print-script');});
   var btn=document.getElementById('themeBtn');
   btn.addEventListener('click',function(){
     var dark=root.getAttribute('data-theme')!=='dark';
